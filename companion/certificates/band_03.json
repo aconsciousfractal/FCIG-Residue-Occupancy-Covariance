@@ -1,0 +1,1553 @@
+{
+  "schema": "p71-band-certificate-v1",
+  "ell": 3,
+  "shift": 132,
+  "scale": 6,
+  "J": 3,
+  "D": 4,
+  "bernstein_degree": 3,
+  "coefficient_degree": 6,
+  "factor": "k(k-1)",
+  "endpoint_denominators": [
+    6,
+    4
+  ],
+  "coefficient_order": "ascending powers of y=a-shift",
+  "vectors": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ]
+  ],
+  "affine_types": [
+    {
+      "residue": 1,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 8
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -22
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -6
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -22
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -6
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 84
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": -36
+        }
+      ]
+    },
+    {
+      "residue": 7,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -4
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -4
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -12
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -4
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -12
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 48
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": -12
+        }
+      ]
+    },
+    {
+      "residue": 11,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -52
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 8
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 24
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 8
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 24
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 24
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": -36
+        }
+      ]
+    },
+    {
+      "residue": 13,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -16
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 14
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -18
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 14
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -18
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 12
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": 12
+        }
+      ]
+    },
+    {
+      "residue": 17,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -4
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -4
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -12
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -4
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -12
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 48
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": -12
+        }
+      ]
+    },
+    {
+      "residue": 19,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -28
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 32
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -24
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 32
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -24
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -24
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": 36
+        }
+      ]
+    },
+    {
+      "residue": 23,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": -16
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 14
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -18
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 14
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -18
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 12
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": 12
+        }
+      ]
+    },
+    {
+      "residue": 29,
+      "entries": [
+        {
+          "vector": [
+            0,
+            0,
+            1
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 32
+        },
+        {
+          "vector": [
+            0,
+            1,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 2
+        },
+        {
+          "vector": [
+            0,
+            1,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -54
+        },
+        {
+          "vector": [
+            1,
+            0,
+            0
+          ],
+          "A": -2,
+          "B": 12,
+          "C": 2
+        },
+        {
+          "vector": [
+            1,
+            0,
+            1
+          ],
+          "A": 0,
+          "B": 6,
+          "C": -54
+        },
+        {
+          "vector": [
+            1,
+            1,
+            0
+          ],
+          "A": 0,
+          "B": 6,
+          "C": 36
+        },
+        {
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "A": 6,
+          "B": -24,
+          "C": 36
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "residue": 1,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        79875723054516480,
+        3609559347588864,
+        67964676828300,
+        682514655174,
+        3855353112,
+        11614914,
+        14580
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        28294450082003840,
+        1280918491027824,
+        24161699829596,
+        243068799930,
+        1375468064,
+        4151142,
+        5220
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        15516776784396160,
+        705671684618080,
+        13371144603180,
+        135116850870,
+        767979488,
+        2327906,
+        2940
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        10275059785374720,
+        468650632012176,
+        8905570999164,
+        90247000890,
+        514383192,
+        1563510,
+        1980
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        39777468509076480,
+        1798739341406064,
+        33891347590110,
+        340571988099,
+        1925095572,
+        5803569,
+        7290
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        21632199473283840,
+        981775067570424,
+        18565135712406,
+        187227309645,
+        1062060264,
+        3213027,
+        4050
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        12339014359916160,
+        564984237534480,
+        10776826676430,
+        109611636795,
+        626988888,
+        1912401,
+        2430
+      ]
+    },
+    {
+      "residue": 1,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        12471047161614720,
+        569929503425976,
+        10850915422854,
+        110166619725,
+        629067492,
+        1915515,
+        2430
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        80089580412092160,
+        3617613124106688,
+        68085997927020,
+        683428441158,
+        3858794424,
+        11620098,
+        14580
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        28582594514929280,
+        1291747255919568,
+        24324482289932,
+        244292306490,
+        1380066128,
+        4158054,
+        5220
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        16000419162286720,
+        723852027663520,
+        13644507239820,
+        137172010710,
+        775704896,
+        2339522,
+        2940
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        10693321649418240,
+        484384041572592,
+        9142302666348,
+        92027979930,
+        521082504,
+        1573590,
+        1980
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        39991325866652160,
+        1806793117923888,
+        34012668688830,
+        341485774083,
+        1928536884,
+        5808753,
+        7290
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        21920343906209280,
+        992603832462168,
+        18727918172742,
+        188450816205,
+        1066658328,
+        3219939,
+        4050
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        12822656737806720,
+        583164580579920,
+        11050189313070,
+        111666796635,
+        634714296,
+        1924017,
+        2430
+      ]
+    },
+    {
+      "residue": 7,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        12889309025658240,
+        585662912986392,
+        11087647090038,
+        111947598765,
+        635766804,
+        1925595,
+        2430
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        79875723054516480,
+        3609559347588864,
+        67964676828300,
+        682514655174,
+        3855353112,
+        11614914,
+        14580
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        29371097152019840,
+        1321409291476944,
+        24770814443276,
+        247650338490,
+        1392698384,
+        4177062,
+        5220
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        17130733597452160,
+        766377395212000,
+        14284472649900,
+        141987435030,
+        793821728,
+        2366786,
+        2940
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        11886989014494720,
+        529295362446576,
+        9818211298284,
+        97114137690,
+        540218952,
+        1602390,
+        1980
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        39777468509076480,
+        1798739341406064,
+        33891347590110,
+        340571988099,
+        1925095572,
+        5803569,
+        7290
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        22708846543299840,
+        1022265868019544,
+        19174250326086,
+        191808848205,
+        1079290584,
+        3238947,
+        4050
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        13952971172972160,
+        625689948128400,
+        11690154723150,
+        116482220955,
+        652831128,
+        1951281,
+        2430
+      ]
+    },
+    {
+      "residue": 11,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        14082976390734720,
+        630574233860376,
+        11763555721974,
+        117033756525,
+        654903252,
+        1954395,
+        2430
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        80303437769667840,
+        3625666900624512,
+        68207319025740,
+        684342227142,
+        3862235736,
+        11625282,
+        14580
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        28870738947854720,
+        1302576020811312,
+        24487264750268,
+        245515813050,
+        1384664192,
+        4164966,
+        5220
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        16484061540177280,
+        742032370708960,
+        13917869876460,
+        139227170550,
+        783430304,
+        2351138,
+        2940
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        11111583513461760,
+        500117451133008,
+        9379034333532,
+        93808958970,
+        527781816,
+        1583670,
+        1980
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        40205183224227840,
+        1814846894441712,
+        34133989787550,
+        342399560067,
+        1931978196,
+        5813937,
+        7290
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        22208488339134720,
+        1003432597353912,
+        18890700633078,
+        189674322765,
+        1071256392,
+        3226851,
+        4050
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        13306299115697280,
+        601344923625360,
+        11323551949710,
+        113721956475,
+        642439704,
+        1935633,
+        2430
+      ]
+    },
+    {
+      "residue": 13,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        13307570889701760,
+        601396322546808,
+        11324378757222,
+        113728577805,
+        642466116,
+        1935675,
+        2430
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        80089580412092160,
+        3617613124106688,
+        68085997927020,
+        683428441158,
+        3858794424,
+        11620098,
+        14580
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        28582594514929280,
+        1291747255919568,
+        24324482289932,
+        244292306490,
+        1380066128,
+        4158054,
+        5220
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        16000419162286720,
+        723852027663520,
+        13644507239820,
+        137172010710,
+        775704896,
+        2339522,
+        2940
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        10693321649418240,
+        484384041572592,
+        9142302666348,
+        92027979930,
+        521082504,
+        1573590,
+        1980
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        39991325866652160,
+        1806793117923888,
+        34012668688830,
+        341485774083,
+        1928536884,
+        5808753,
+        7290
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        21920343906209280,
+        992603832462168,
+        18727918172742,
+        188450816205,
+        1066658328,
+        3219939,
+        4050
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        12822656737806720,
+        583164580579920,
+        11050189313070,
+        111666796635,
+        634714296,
+        1924017,
+        2430
+      ]
+    },
+    {
+      "residue": 17,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        12889309025658240,
+        585662912986392,
+        11087647090038,
+        111947598765,
+        635766804,
+        1925595,
+        2430
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        80517295127243520,
+        3633720677142336,
+        68328640124460,
+        685256013126,
+        3865677048,
+        11630466,
+        14580
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        29158883380780160,
+        1313404785703056,
+        24650047210604,
+        246739319610,
+        1389262256,
+        4171878,
+        5220
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        16967703918067840,
+        760212713754400,
+        14191232513100,
+        141282330390,
+        791155712,
+        2362754,
+        2940
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        11529845377505280,
+        515850860693424,
+        9615766000716,
+        95589938010,
+        534481128,
+        1593750,
+        1980
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        40419040581803520,
+        1822900670959536,
+        34255310886270,
+        343313346051,
+        1935419508,
+        5819121,
+        7290
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        22496632772060160,
+        1014261362245656,
+        19053483093414,
+        190897829325,
+        1075854456,
+        3233763,
+        4050
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        13789941493587840,
+        619525266670800,
+        11596914586350,
+        115777116315,
+        650165112,
+        1947249,
+        2430
+      ]
+    },
+    {
+      "residue": 19,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        13725832753745280,
+        617129732107224,
+        11561110424406,
+        115509556845,
+        649165428,
+        1945755,
+        2430
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        80303437769667840,
+        3625666900624512,
+        68207319025740,
+        684342227142,
+        3862235736,
+        11625282,
+        14580
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        28870738947854720,
+        1302576020811312,
+        24487264750268,
+        245515813050,
+        1384664192,
+        4164966,
+        5220
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        16484061540177280,
+        742032370708960,
+        13917869876460,
+        139227170550,
+        783430304,
+        2351138,
+        2940
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        11111583513461760,
+        500117451133008,
+        9379034333532,
+        93808958970,
+        527781816,
+        1583670,
+        1980
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        40205183224227840,
+        1814846894441712,
+        34133989787550,
+        342399560067,
+        1931978196,
+        5813937,
+        7290
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        22208488339134720,
+        1003432597353912,
+        18890700633078,
+        189674322765,
+        1071256392,
+        3226851,
+        4050
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        13306299115697280,
+        601344923625360,
+        11323551949710,
+        113721956475,
+        642439704,
+        1935633,
+        2430
+      ]
+    },
+    {
+      "residue": 23,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        13307570889701760,
+        601396322546808,
+        11324378757222,
+        113728577805,
+        642466116,
+        1935675,
+        2430
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 6,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        80517295127243520,
+        3633720677142336,
+        68328640124460,
+        685256013126,
+        3865677048,
+        11630466,
+        14580
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 6,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        28082236310764160,
+        1272913985253936,
+        24040932596924,
+        242157781050,
+        1372031936,
+        4145958,
+        5220
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 6,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        15353747105011840,
+        699507003160480,
+        13277904466380,
+        134411746230,
+        765313472,
+        2323874,
+        2940
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 6,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        9917916148385280,
+        455206130259024,
+        8703125701596,
+        88722801210,
+        508645368,
+        1554870,
+        1980
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 4,
+      "bernstein_index": 0,
+      "negative_scaled_B_at_shift_plus_y": [
+        40419040581803520,
+        1822900670959536,
+        34255310886270,
+        343313346051,
+        1935419508,
+        5819121,
+        7290
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 4,
+      "bernstein_index": 1,
+      "negative_scaled_B_at_shift_plus_y": [
+        21419985702044160,
+        973770561796536,
+        18444368479734,
+        186316290765,
+        1058624136,
+        3207843,
+        4050
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 4,
+      "bernstein_index": 2,
+      "negative_scaled_B_at_shift_plus_y": [
+        12175984680531840,
+        558819556076880,
+        10683586539630,
+        108906532155,
+        624322872,
+        1908369,
+        2430
+      ]
+    },
+    {
+      "residue": 29,
+      "endpoint_denominator": 4,
+      "bernstein_index": 3,
+      "negative_scaled_B_at_shift_plus_y": [
+        12113903524625280,
+        556485001672824,
+        10648470125286,
+        108642420045,
+        623329668,
+        1906875,
+        2430
+      ]
+    }
+  ]
+}

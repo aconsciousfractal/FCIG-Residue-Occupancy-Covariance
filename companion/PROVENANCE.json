@@ -1,0 +1,192 @@
+{
+  "schema": "residue-occupancy-provenance-v1",
+  "scope": "Exact certificate bytes and adapted independent verifiers from author-supplied research packages. No generator is imported.",
+  "records": [
+    {
+      "file": "certificates/band_03.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_03.json",
+      "sha256": "86b02b5444ff8ec1f536181e7a66aabc8a07b64cbade28741723124af7944432",
+      "bytes": 28721,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_04.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_04.json",
+      "sha256": "94f4c911ec39f2dfd6ad71331c8e89312669c076fe104efd9fbe05f28514bf44",
+      "bytes": 47009,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_05.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_05.json",
+      "sha256": "19b46b876028f2c7654958833add0c2c8842a7e6a2beafd11bfec967d4389ee5",
+      "bytes": 49706,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_06.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_06.json",
+      "sha256": "7f4900f48310db77edbc110663a26497ea7316e279b25015983d930c5a755b53",
+      "bytes": 55275,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_07.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_07.json",
+      "sha256": "3c4f7dfe2be5a3ed28387e1c31ce9b3a305d5b9bcf8997809aff16cb928b5eb4",
+      "bytes": 80158,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_08.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_08.json",
+      "sha256": "f5fef4a6cccaf34627e5af335094f8c99d70fcb662fe2b91f182405c87d3753a",
+      "bytes": 96936,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_09.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_09.json",
+      "sha256": "1b41d7b4eaedfb0c94425edd605016a970d41a7359f2d058c51901397d5418e8",
+      "bytes": 125122,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_10.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_10.json",
+      "sha256": "77a564b43063e649fa4b1ea9d9885bbd47fe284c22e725b1f8750520cda4b784",
+      "bytes": 117957,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_11.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_11.json",
+      "sha256": "487f251fe157cee908eb1c2b8aa7447b3ec87df25beadb8474bb38cdb69c686e",
+      "bytes": 154718,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_12.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_12.json",
+      "sha256": "9ba29f41abf1cd8b6c20b5c8efa1b322833e61f97740a4250a6afa74785f82c1",
+      "bytes": 184483,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_13.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_13.json",
+      "sha256": "2e312699650f0fee2abc54c9cb03f4df15e8c50c15b6d23c77a289a6ddfdcb20",
+      "bytes": 221326,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_14.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_14.json",
+      "sha256": "244e904361ab94d0bbdf89de760b2da06d7a69e94665c2b9d19b8480dac9a083",
+      "bytes": 261478,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_15.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_15.json",
+      "sha256": "8c0152817186e3dcb3d6edd9681f5090d645db1e1773a8cda5b3315edbb69d67",
+      "bytes": 250349,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/band_16.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/band_certificates/band_16.json",
+      "sha256": "26a80689b1dd2f2e40b4d03b3350a0909a6764f2c694e5407fabd6b7c70ebf74",
+      "bytes": 305153,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/depth2.json",
+      "source_archive": "P71_Step05.zip",
+      "source_archive_sha256": "8c54e9af6621440713d3f1be45b0291d5be6d541013b27b55ade1d09e724e7ff",
+      "source_member": "P71_Step05_Fasce_Periodo15/results/depth2_certificate.json",
+      "sha256": "5a5517b23e86aa8217561b48e96cce34e8214acb085fde61af191de3fad6d188",
+      "bytes": 23079,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/urn_monotonicity.json",
+      "source_archive": "P71_Step06.zip",
+      "source_archive_sha256": "3cfc54b098e8dc6e11cac4ad043e652970dcb155aee70ddfb43e7f1771f1f1fa",
+      "source_member": "P71_Step06/results/urn_monotonicity.json",
+      "sha256": "dee1c1896bebcabf0f37517c6c1a52d67b2f1c511a71dc58ee44367a2a941dea",
+      "bytes": 14495,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/column_anchors.json",
+      "source_archive": "P71_Step06.zip",
+      "source_archive_sha256": "3cfc54b098e8dc6e11cac4ad043e652970dcb155aee70ddfb43e7f1771f1f1fa",
+      "source_member": "P71_Step06/results/column_anchors.json",
+      "sha256": "e9b8a437e51eb53e7afc16aca91def64f8b5257a0cccf5a6e058a5402f32d095",
+      "bytes": 137115,
+      "transformation": "none"
+    },
+    {
+      "file": "certificates/small_cutoffs.json",
+      "source_archive": "P71_Step06.zip",
+      "source_archive_sha256": "3cfc54b098e8dc6e11cac4ad043e652970dcb155aee70ddfb43e7f1771f1f1fa",
+      "source_member": "P71_Step06/results/small_cutoffs.json",
+      "sha256": "10677dcee5ff154c572783ff8359fa50e71e7831ec57a49465450d761e82bfa8",
+      "bytes": 15505,
+      "transformation": "none"
+    },
+    {
+      "file": "band_check.py",
+      "source_archive": "P71_Step05.zip",
+      "source_member": "P71_Step05_Fasce_Periodo15/code/check_band_certificates.py",
+      "source_member_sha256": "ad1bc8ca8f492c09ee9a93aed4c14117abb3066b55fbfd666504376ea75588dd",
+      "transformation": "Local certificate paths; read-only depth-two comparison; duplicate-entry guard; return receipt instead of writing it. Mathematical kernels and derived grids unchanged."
+    },
+    {
+      "file": "urn_check.py",
+      "source_archive": "P71_Step06.zip",
+      "source_member": "P71_Step06/code/check_certificates.py",
+      "source_member_sha256": "b18a462eb9cd14d5f2fcb39c75f746f4b027797ceb952bf224997ecd0ea02b82",
+      "transformation": "Local certificate paths; read-only return value; schema/factor guard. Mathematical kernels, degree bounds, full grids and direct probability checks unchanged."
+    }
+  ],
+  "preparation_record": {
+    "version": "1.0.0-rc4",
+    "ai_assistance": "Mathematical exploration, proof development, code preparation, checking and drafting.",
+    "documented_tool": "Codex assistant",
+    "external_tool_and_version": "Not documented in the available record.",
+    "human_complete_proof_verification": "Not established by the available record; not claimed.",
+    "review_boundary": "Computational verification and a separate AI reading do not constitute human peer review.",
+    "distribution_terms": "See ../LICENSE_SCOPE.md; no public release is claimed.",
+    "certificate_policy": "All18 certificate files retain their original bytes; source ZIPs are provenance identifiers, not runtime dependencies."
+  }
+}

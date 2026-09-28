@@ -1,0 +1,1161 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdflang={en-US}}
+\hypersetup{pdftitle={Covariance Signs for Residue-Class Occupancy on Decimal Unit Carriers},pdfauthor={Oleksiy Babanskyy}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\E}{\mathbb E}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\ff}[2]{(#1)_{#2}}
+\newcommand{\vect}[3]{(#1,#2,#3)}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\title{Covariance Signs for Residue-Class Occupancy\\on Decimal Unit Carriers}
+\author{Oleksiy Babanskyy}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Choose a uniformly random fixed-size subset of the integers below a power
+of ten that are coprime to ten. We determine the sign of the covariance
+between the numbers of occupied residue classes modulo \(3\) and modulo
+any positive integer coprime to \(30\). Outside deterministic zero ranges,
+the covariance is strictly negative except for four families of moduli
+near half the cutoff. Explicit quadratic expressions determine every
+exceptional sign; a divisibility argument excludes nontrivial zeros in
+two of the four families. We also prove a sufficient
+negative-covariance criterion for arbitrary partitions with three nearly
+equal rows and controlled column profiles, with a consequence for
+nonnegative weighted sums over overlapping admissible test sets.
+The proof combines empty-class
+identities, a periodic matching count, majorization, and exact polynomial
+certificates checked by rational interpolation. A minimal standard-library
+companion verifies all certificate identities. For prime moduli, the
+classification gives the sign of the covariance of two local sieve
+factors. It does not assert a distribution law for actual prime sets.
+\end{abstract}
+
+\section{Introduction and main results}\label{sec:intro}
+
+The integers below \(100\) that are coprime to \(10\) form the familiar
+four-column display
+\[
+ \{10j+r:0\le j\le9,\ r\in\{1,3,7,9\}\}.
+\]
+Every prime at least \(11\) has one of these four terminal digits.
+The display is therefore a natural carrier for studying local divisibility
+constraints. Its entries, however, include composite integers and the
+integer \(1\). The carrier specifies candidates; it does not specify their
+primality. This distinction leads to a finite question that can be answered
+without a prime-distribution hypothesis: when a fixed number of candidate
+offsets are sampled, how do two counts of occupied residue classes vary
+together?
+
+Let \(d\ge2\), \(N=10^d\), and
+\begin{equation}\label{eq:carrier}
+ \Omega_N=\{h\in\mathbb Z:1\le h<N,\ \gcd(h,10)=1\},\qquad
+ m=|\Omega_N|=\frac{2N}{5}=3a+4,\qquad s=2a+4.
+\end{equation}
+Here
+\[
+ a=\frac{4(10^{d-1}-1)}3,
+ \qquad a=12\ \text{if }d=2,\quad a\ge132\ \text{if }d\ge3.
+\]
+For a uniformly chosen \(k\)-element subset \(H\) of \(\Omega_N\), set
+\[
+ \nu_q(H)=|\{h\bmod q:h\in H\}|,\qquad
+ C(d,q,k)=\Cov(\nu_3(H),\nu_q(H)).
+\]
+Unless stated otherwise, \(0\le k\le m\), \(q\) is a positive integer,
+and \(\gcd(q,30)=1\). The modulus \(q\) need not be prime.
+Binomial coefficients with nonnegative upper index are zero when the
+lower index is outside its usual range.
+
+\begin{theorem}[Decimal sign classification]\label{thm:decimal}
+If \(q=1\) or \(q\ge N/2\), then \(C(d,q,k)=0\) for every \(k\).
+For \(7\le q<N/2\), the covariance is zero when \(k=0,1\) or \(k>s\).
+For \(2\le k\le s\), it is strictly negative except possibly when
+\[
+ q=N/2-g,\qquad
+ g\in\{1,3,7\},\quad\text{or}\quad g=19\ \text{and }d\ge3.
+\]
+In these exceptional families put \(X=(s-k)(s-k-1)\). The sign of \(C\),
+including equality, is the sign of the following expression:
+\begin{center}
+\begin{tabular}{@{}cl@{}}
+\toprule
+Gap \(g\)&Sign expression\\
+\midrule
+\(1,3\)&\(a(5a+7)-2X\)\\
+\(7\)&\((2a+1)(7a^2-7a-24)-(11a-2)X\)\\
+\(19,\ d\ge3\)&\((2a+1)(a^2-49a-72)-(17a-14)X\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each exceptional family starts with negative covariance at \(k=2\) and
+ends with positive covariance at \(k=s-1,s\). It has one transition
+from negative to positive and at most one intervening integer zero.
+\end{theorem}
+
+The statement is an exact sign decision for every admitted input.
+Corollary~\ref{cor:nonzero} rules out nontrivial integer zeros for gaps
+\(7\) and \(19\). The corresponding arithmetic question remains open
+only for gaps \(1\) and \(3\); it is separate from deciding the sign
+at a specified input.
+
+Our second result has no arithmetic carrier in its hypotheses.
+For a partition, its occupancy is the number of its classes met by the
+random subset. A column profile records its intersections with the three
+rows, in the specified row order.
+
+\begin{theorem}[A three-row criterion]\label{thm:criterion}
+Let a finite set have a row partition of sizes
+\(\rho=(a+2,a+2,a)\), where \(a\ge40\) is an integer, and a partition
+into nonempty columns. For each column write
+\(v=b\one+e\), where \(\one=(1,1,1)\), \(b=\min_i v_i\), and \(\min_i e_i=0\).
+Suppose every column satisfies
+\begin{equation}\label{eq:criterion}
+ b\ge4,\qquad \max_i e_i\le2,\qquad |v|\le a,\qquad
+ e=(0,0,2)\ \Longrightarrow\ b\ge6.
+\end{equation}
+For a uniform \(k\)-subset, the covariance of the two occupancies is
+strictly negative for \(2\le k\le2a+4\), and zero for the other
+cardinalities \(0\le k\le3a+4\).
+\end{theorem}
+
+The orientation of \((0,0,2)\) is essential: the third row is the smaller
+one. The criterion is sufficient, with no claim that its numerical
+thresholds are optimal. It is nonvacuous for infinitely many populations.
+For example, take \(a=12t\), \(t\ge4\), with \(3t-1\) columns of profile
+\((4,4,4)\) and one column of profile \((6,6,4)\).
+Their sum is \((a+2,a+2,a)\) and all hypotheses hold.
+The argument controls each admissible set separately.
+Corollary~\ref{cor:weighted} therefore permits overlapping test sets
+and fixed nonnegative weights, without changing the sampling law.
+
+\subsection{Relation to established frameworks}\label{sec:context}
+The elementary empty-class formula used below is a finite
+hypergeometric identity. The occupancy of a partition is also the rank
+function of the direct sum of rank-one uniform matroids on its classes.
+Consequently the joint generating function
+\[
+ \sum_{H\subseteq\Omega_N} z^{|H|}u^{\nu_3(H)}v^{\nu_q(H)}
+\]
+is an instance of the established rank generating function of a pair of
+matroids; see Las Vergnas \cite[p.~305]{lasvergnas}. No new general
+matroid invariant is proposed here. The contribution is the sign
+classification for this structured pair, and the separate sufficient
+criterion in Theorem~\ref{thm:criterion}.
+
+Negative association is an important framework for sampling without
+replacement \cite{joagdev}. Its disjoint-coordinate condition does not
+directly decide our covariance: both occupancies depend on the same
+sample indicators, and a row event and a column event generally overlap.
+Indeed Theorem~\ref{thm:decimal} contains positive covariances.
+Scalar hypergeometric stochastic-order criteria \cite{klm} and
+coupling comparisons for weighted sums \cite{benhamou} concern related
+sampling questions. The urn comparison needed here changes three
+population sizes simultaneously and adds three empty-row probabilities;
+we prove the required comparison explicitly rather than assuming a
+componentwise stochastic order.
+
+The arithmetic motivation is equally specific. Residue occupancies
+determine the local factors occurring in singular-series calculations;
+constrained averages of singular series are studied, for example, by
+Kuperberg \cite{kuperberg}. Section~\ref{sec:sieve} gives the exact
+two-factor consequence of Theorem~\ref{thm:decimal}. An average of an
+entire singular series, or a statement about actual prime patterns,
+requires additional information.
+
+\subsection{Proof organization and computational content}
+We first reduce occupancy covariance to empty-class probabilities.
+Two certified urn inequalities and majorization prove
+Theorem~\ref{thm:criterion}, which controls the small-modulus range.
+The remaining arithmetic problem splits into a matching window and
+fourteen finite bands. The matching window gives the exceptional
+families explicitly. In each band, affine column multiplicities reduce
+the sign to finitely many polynomial identities.
+
+All load-bearing certificate data are supplied with the article.
+The verifier uses only integer arithmetic and exact rational arithmetic
+from Python's standard library. It reconstructs the polynomials and
+checks identities on complete interpolation grids whose degree bounds
+are proved below. These checks establish polynomial identities on
+infinite parameter domains; they are not numerical extrapolations.
+The certificate specification appears in Section~\ref{sec:certificates}.
+The proof is computer-assisted, not a proof-assistant formalization.
+
+\section{Empty-class identities}\label{sec:empty}
+A complete interval of length \(30\) contributes four carrier points
+to each residue class modulo \(3\). Since \(N\equiv10\pmod{30}\),
+the final interval contributes \((2,2,0)\). Thus the row sizes are
+\begin{equation}\label{eq:rows}
+ \rho=(a+2,a+2,a)
+\end{equation}
+in the fixed order of residues \(0,1,2\).
+
+\begin{lemma}[Covariance from intersections]\label{lem:empty}
+For two partitions of a set of size \(m\), let \(\rho_r\) be the row
+sizes, \(j_c\) the column sizes and \(v_{rc}\) the intersection sizes.
+For uniform \(k\)-subsets, with \(Z=\binom mk\), their occupancy
+covariance equals
+\begin{equation}\label{eq:empty}
+ \sum_{r,c}\left\{
+ \frac{\binom{m-\rho_r-j_c+v_{rc}}k}{Z}
+ -\frac{\binom{m-\rho_r}k\binom{m-j_c}k}{Z^2}\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Each occupancy is the total number of classes minus the sum of the
+indicators that a class is empty. The covariance is therefore the sum
+of the covariances of empty-row and empty-column indicators.
+Avoiding their union leaves \(m-\rho_r-j_c+v_{rc}\) available elements,
+which proves the formula.
+\end{proof}
+
+For a triple \(R=(R_0,R_1,R_2)\) of nonnegative population sizes, put
+\begin{equation}\label{eq:F}
+ F(R;k)=\sum_{r=0}^2\frac{\binom{M-R_r}k}{\binom Mk},
+ \qquad M=R_0+R_1+R_2,\quad 0\le k\le M.
+\end{equation}
+This is the expected number of empty rows.
+For a column \(v\) of size \(j=|v|\), conditioning on its being empty
+gives its contribution to \eqref{eq:empty} as
+\begin{equation}\label{eq:conditional}
+ C_v=\frac{\binom{m-j}k}{\binom mk}
+       \bigl(F(\rho-v;k)-F(\rho;k)\bigr),\qquad k\le m-j.
+\end{equation}
+For \(k>m-j\) that column is always occupied, so its contribution is zero.
+Column multiplicities must be retained when summing \(C_v\).
+
+The deterministic boundaries are immediate. When \(k=0,1\), both
+occupancies are deterministic. If \(k>s=m-a\), every row is occupied.
+When \(q=1\), the column occupancy is deterministic. Finally, if
+\(q\ge N/2\), two distinct carrier points cannot be congruent modulo \(q\).
+Both points are odd and \(q\) is odd, so their nonzero difference would
+have magnitude at least \(2q\ge N\). Hence \(\nu_q(H)=k\).
+
+\subsection{A common polynomial kernel}\label{sec:kernel}
+Write \((z)_j=z(z-1)\cdots(z-j+1)\), with \((z)_0=1\).
+For a collection of column profiles choose
+\[
+ J\ge\max_v|v|,\qquad
+ D\ge\max_{v,r}\delta_r(v),\qquad
+ \delta_r(v)=|v|-v_r+2\one_{\{r<2\}},
+\]
+and assume \(D\ge2\). Define
+\begin{align}
+ K_v(a,k)={}&(m)_J\sum_{r=0}^2(s-k)_{\delta_r(v)}
+                     \prod_{i=\delta_r(v)}^{D-1}(s-i) \notag\\
+ &-\left(\prod_{i=2}^{D-1}(s-i)\right)
+       \bigl[s(s-1)+2(s-k)_2\bigr](m-k)_{|v|}
+                     \prod_{i=|v|}^{J-1}(m-i).
+ \label{eq:kernel}
+\end{align}
+Empty products are one. Whenever \(2\le k\le s\), \(J\le m\),
+and \(D\le s\), the empty-class identity yields
+\begin{equation}\label{eq:kernelcov}
+ C=\frac{\binom sk}{\binom mk(s)_D(m)_J}\sum_v n_v K_v(a,k),
+\end{equation}
+where \(n_v\) is the number of columns with profile \(v\).
+Indeed \(m-\rho_r-|v|+v_r=s-\delta_r(v)\), and
+\[
+ \frac{\binom{s-\delta}k}{\binom sk}
+       =\frac{(s-k)_\delta}{(s)_\delta},\qquad
+ \frac{\binom{m-j}k}{\binom mk}=\frac{(m-k)_j}{(m)_j}.
+\]
+Moreover
+\(F(\rho;k)=\binom sk\bigl[s(s-1)+2(s-k)_2\bigr]/
+ \bigl(\binom mk s(s-1)\bigr)\).
+These identities also hold at integer values where the numerator
+binomial coefficient vanishes.
+
+The raw total degree of \(K_v\) in \((a,k)\) is at most \(J+D\),
+and its degree in \(k\) is at most \(J+2\). Each first summand has
+total degree \(J+D\) and \(k\)-degree \(\delta_r(v)\le |v|+2\le J+2\);
+the second summand has the same total bound and \(k\)-degree
+at most \(|v|+2\).
+
+\section{Two finite certificates for urn comparisons}\label{sec:urn}
+We state the certificate principle explicitly, so that the role of
+each finite computation is clear.
+
+\begin{lemma}[Identity and sign certificates]\label{lem:certificate}
+Two polynomials of degree at most \(A\) in one variable and at most
+\(B\) in another are identical if they agree on a product of \(A+1\)
+distinct nodes and \(B+1\) distinct nodes.
+If
+\[
+ Q(t,x)=\sum_{i=0}^n B_i(t)\binom ni x^i(1-x)^{n-i}
+\]
+and each \(L B_i(t_0+y)\), for a positive integer \(L\), has
+nonnegative power coefficients and a strictly positive constant term,
+then \(Q(t,x)>0\) for \(t\ge t_0\), \(0\le x\le1\).
+The analogous statement with \(-L B_i\) gives strict negativity.
+\end{lemma}
+\begin{proof}
+Apply the univariate root bound successively in the two variables.
+For the sign statement, every coefficient polynomial is strictly
+positive for \(y\ge0\), and the Bernstein basis is nonnegative
+and has sum one on \([0,1]\).
+\end{proof}
+
+\begin{lemma}[Balanced urn increment]\label{lem:increment}
+Let \(R=(h,h+p,h+r)\), where \(h\ge16\) and \(0\le p\le r\le4\)
+are integers. In the common domain \(0\le k\le3h+p+r\),
+\[
+ F(R+\one;k)\ge F(R;k).
+\]
+The inequality is strict for \(2\le k\le2h+p+r+2\), and is an
+equality for the other cardinalities in that domain.
+\end{lemma}
+\begin{proof}
+Put \(M=3h+p+r\), \(n=2h+p+r\), \(D=r+2\).
+The list \(\mathcal D=(0,p,r)\) retains repetitions. Set
+\begin{align*}
+ A&=\sum_{d\in\mathcal D}(n+2-k)_d
+                      \prod_{i=d}^{D-1}(n+2-i),\\
+ B&=\sum_{d\in\mathcal D}(n+2-k)_{d+2}
+                      \prod_{i=d+2}^{D-1}(n+2-i),\\
+ P&=(M+3-k)_3 A-(M+3)_3 B.
+\end{align*}
+Conversion of the binomial coefficients in \eqref{eq:F} gives
+\begin{equation}\label{eq:increment}
+ F(R+\one;k)-F(R;k)
+ =\frac{\binom{n+2}k}{\binom{M+3}k}
+       \frac{P}{(n+2)_D(M+3-k)_3}
+\end{equation}
+for \(2\le k\le n+2\). Every factor outside \(P\) is positive
+in this range: \(n+2\ge D\) and \(M+3-k\ge h+1\ge17\).
+
+For each of the fifteen pairs \((p,r)\), the certificate
+\texttt{urn\_monotonicity.json} establishes
+\[
+ P=k(k-1)Q,\qquad
+ Q\bigm|_{k=2+(2h+p+r)x}
+   =\sum_{i=0}^{r+1} B_i(h)\binom{r+1}{i}x^i(1-x)^{r+1-i}.
+\]
+It records the coefficients of \(L B_i(16+y)\) for a positive
+integer scale \(L\). They are nonnegative and their constants are
+positive. The parameter degree bound of the stored coefficient
+polynomials is \(r+3\); there are \(490\) stored integers in total.
+
+For completeness, the raw degree bounds follow from the displayed
+formula for \(P\): its total degree in \((h,k)\) is at most
+\(r+5\), and its \(k\)-degree is at most \(r+3\).
+After \(k=2+(2h+p+r)x\), its degree in \(h\) remains at most \(r+5\),
+and its degree in \(x\) at most \(r+3\). The encoded right side
+has these same bounds. The checker reconstructs both sides and
+compares them at \(r+6\) values of \(h\), starting at \(16\),
+and \(r+4\) values \(x=j/(r+3)\). All \(890\) equalities hold.
+Lemma~\ref{lem:certificate} therefore proves the identities globally
+and \(Q>0\) on the required domain. Equation~\eqref{eq:increment}
+proves strictness.
+
+For \(k>n+2\), both empty-row expectations vanish.
+For \(k=0,1\), they are respectively \(3,2\), proving the remaining
+equalities.
+\end{proof}
+
+\begin{lemma}[Six column anchors]\label{lem:anchors}
+Let \(\rho=(a+2,a+2,a)\), \(a\ge40\). For \(2\le k\le2a+4\),
+\[
+ F(\rho-v;k)<F(\rho;k)
+\]
+for each of the ordered vectors
+\begin{equation}\label{eq:anchors}
+ v\in\{(4,4,4),(4,4,5),(4,5,5),(4,5,6),(4,6,6),(6,6,8)\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For each anchor use \eqref{eq:kernel} with \(J=|v|\) and
+\(D=\max_r\delta_r(v)\). Then
+\begin{equation}\label{eq:anchoridentity}
+ \frac{\binom{m-J}k}{\binom mk}
+       \bigl(F(\rho-v;k)-F(\rho;k)\bigr)
+ =\frac{\binom sk}{\binom mk}\frac{K_v(a,k)}{(s)_D(m)_J}.
+\end{equation}
+The certificate \texttt{column\_anchors.json} establishes
+\(K_v=k(k-1)Q_v\). After \(k=2+(2a+2)x\), it gives the degree-\(J\)
+Bernstein expansion of \(Q_v\), whose coefficient polynomials have
+degree at most \(J+D-2\) in \(a\).
+For each coefficient \(B_i(a)\), the power coefficients of
+\(-L B_i(40+y)\) are nonnegative with positive constant term.
+Thus the \emph{Bernstein coefficients themselves} are strictly negative
+for \(a\ge40\).
+
+There are \(2630\) stored integers. The raw bounds \(J+D\) in
+total degree and \(J+2\) in \(k\) follow from
+Section~\ref{sec:kernel}. They give bounds \(J+D,J+2\) after
+the substitution. The encoded right side has the same bounds.
+The checker verifies the raw identity on
+\((J+D+1)(J+3)\) rational grid points for each anchor,
+totalling \(3166\) exact equalities. Lemma~\ref{lem:certificate}
+therefore proves the global identity and strict negativity.
+All denominators in \eqref{eq:anchoridentity} are positive.
+Also \(J\le20\le a\), so \(m-J\ge s\) and its left prefactor
+is positive throughout the asserted range.
+\end{proof}
+
+\section{Proof of the three-row criterion}\label{sec:criterionproof}
+At fixed total size \(M\), the function \(F(R;k)\) is Schur-convex
+on integer triples: making the row sizes more unequal increases it
+weakly. This follows directly from discrete convexity, since
+\begin{equation}\label{eq:convex}
+ \binom{M-z-2}k-2\binom{M-z-1}k+\binom{M-z}k
+       =\binom{M-z-2}{k-2}\ge0
+\end{equation}
+whenever the indicated row-size comparison is defined.
+Equivalently, a unit transfer from a smaller entry to a larger one
+cannot decrease the sum in \eqref{eq:F}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:criterion}]
+There are nineteen possible normalized profiles
+\(e\in\{0,1,2\}^3\) with \(\min e=0\).
+For each choose a comparison profile \(e^*\) and an anchor base
+\(b^*\) from Table~\ref{tab:major}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Profile class&\(e^*\)&\(b^*\)&\(b^*\one+e^*\)\\
+\midrule
+\(|e|=0\)&\((0,0,0)\)&4&\((4,4,4)\)\\
+\(|e|=1\)&\((0,0,1)\)&4&\((4,4,5)\)\\
+\(|e|=2,\ e\ne(0,0,2)\)&\((0,1,1)\)&4&\((4,5,5)\)\\
+\(|e|=3\)&\((0,1,2)\)&4&\((4,5,6)\)\\
+\(|e|=4\)&\((0,2,2)\)&4&\((4,6,6)\)\\
+\(e=(0,0,2)\)&\((0,0,2)\)&6&\((6,6,8)\)\\
+\bottomrule
+\end{tabular}
+\caption{Comparison profiles for the three-row criterion.}\label{tab:major}
+\end{table}
+
+The vector \((2-e^*_0,2-e^*_1,-e^*_2)\) majorizes
+\((2-e_0,2-e_1,-e_2)\): their sums agree, the former minimum is
+no larger, and its maximum is no smaller. These are precisely the
+two majorization inequalities for triples of equal sum.
+The table can also be verified over the nineteen profiles by the
+companion. Adding the common value \(a-b\) gives
+\[
+ F(\rho-b\one-e;k)\le F(\rho-b\one-e^*;k).
+\]
+
+Since \(3b\le |v|\le a\), the minimum of either residual population
+is at least
+\[
+ a-b-2\ge 2a/3-2>16,
+\]
+and its spread is at most four. By symmetry of \(F\), the entries
+may be sorted before applying Lemma~\ref{lem:increment}.
+Decreasing \(b\) one unit at a time until \(b=b^*\) adds \(\one\)
+at each step. The hypotheses give \(b\ge b^*\), so
+\[
+ F(\rho-v;k)
+ \le F(\rho-b\one-e^*;k)
+ \le F(\rho-b^*\one-e^*;k)
+ < F(\rho;k).
+\]
+The final strict inequality is Lemma~\ref{lem:anchors}.
+The fixed \(k\) lies in the domain of every intermediate urn,
+because the initial remaining population has size \(m-|v|\ge s\).
+Where necessary the increment lemma is used weakly, including ranges
+where both empty-row expectations vanish.
+
+For \(2\le k\le s\), the prefactor in \eqref{eq:conditional} is
+positive for every column, again because \(m-|v|\ge s\).
+Every contribution is strictly negative, so their sum is strictly
+negative. The zero ranges follow from Section~\ref{sec:empty}.
+\end{proof}
+
+\begin{remark}[Why the orientation restriction is retained]\label{rem:obstruction}
+For \(a=40\), \(k=2\), the column \(v=(4,4,6)\) has a
+\emph{positive} contribution \(C_v=71/4846323\).
+This can be checked by counting pairs: put
+\(I=\mathbf1_{H\cap B\ne\varnothing}\) and \(D=\binom{124}{2}=7626\).
+Across these pairs, \(\sum U=12750\), \(\sum I=1631\) and
+\(\sum UI=2727\); hence
+\[
+ C_v=\frac{2727}{7626}
+     -\frac{12750\cdot1631}{7626^2}
+     =\frac{71}{4846323}>0.
+\]
+Thus the condition on the normalized profile \((0,0,2)\) cannot be
+removed from this columnwise proof. This is a counterexample to
+the individual-column inequality, not a counterexample for an
+entire partition satisfying weakened hypotheses.
+Similarly a completely unrestricted balanced urn increment is false:
+\[
+ F((2,6,6);2)-F((1,5,5);2)=-\frac{23}{1001}.
+\]
+\end{remark}
+
+\section{Small moduli from periodic column profiles}\label{sec:small}
+The criterion has an application slightly wider than the decimal carrier.
+
+\begin{proposition}\label{prop:small}
+Let \(N\equiv10\pmod{30}\), \(q\ge7\), \(\gcd(q,30)=1\), and \(N>32q\).
+Use the carrier \(\Omega_N\), let \(m=2N/5=3a+4\), and sample uniformly
+among its \(k\)-subsets. Then
+\[
+ \Cov(\nu_3,\nu_q)<0\quad(2\le k\le2a+4),
+\]
+and the covariance is zero for the other admissible cardinalities.
+\end{proposition}
+\begin{proof}
+Each class modulo the odd modulus \(q\) has a unique odd representative
+\(h\in[1,2q)\). Its odd terms below \(N\) are
+\(h,h+2q,\ldots\); remove the terms divisible by \(5\).
+Since \(N>32q\), each such progression has at least sixteen terms.
+
+Any fifteen consecutive terms traverse all odd residues modulo \(30\).
+Deleting the multiples of \(5\) leaves four terms in each row modulo \(3\).
+Thus adding a full period adds \((4,4,4)\), and \(b=\min v\ge4\).
+Before deletion, the three row counts differ by at most one.
+Deleted indices have step five; their row counts also differ by at
+most one. Hence the surviving row counts have spread at most two.
+
+It remains to check the oriented exception in \eqref{eq:criterion}.
+Remove all full periods, leaving a residual progression of length
+\(0\le L\le14\). For its normalized profile to be \((0,0,2)\),
+row \(2\) must have one extra term before deletion and one fewer
+deleted term than each other row. Consequently
+\(L\in\{1,4,7,10,13\}\), the progression starts in row \(2\), and
+there are exactly two deleted terms, neither in row \(2\).
+Indeed the pre-deletion counts can differ by only one, the
+deletion counts by only one, and at most three deletions are
+possible in fourteen terms.
+
+Write the deleted indices as \(c,c+5,\ldots\), \(0\le c\le4\).
+Lengths \(1,4\) allow at most one deletion.
+For length \(7\), two deletions require \(c=0\) or \(1\), forcing
+a deleted row-\(2\) index at \(0\) or \(6\).
+For length \(13\), exactly two require \(c=3\) or \(4\), forcing
+a deleted row-\(2\) index at \(3\) or \(9\).
+At length \(10\), only \(c=2\) avoids row \(2\), leaving \((2,2,4)\).
+Restoring full periods gives
+\[
+ v=(2+4z,2+4z,4+4z).
+\]
+The original length is at least sixteen, so \(z\ge1\) and \(b\ge6\).
+
+Finally,
+\[
+ |v|\le\left\lceil\frac{N}{2q}\right\rceil
+ \le\frac{15a+48}{28}\le a\qquad(a\ge4),
+\]
+where the middle inequality uses \(q\ge7\), \(N=(15a+20)/2\), and
+\(\lceil x\rceil\le x+1\). For \(a\ge40\), Theorem~\ref{thm:criterion}
+applies.
+
+If \(a<40\), the constraints \(N\equiv10\pmod{30}\),
+\(224<N<310\), and \(N>32q\) leave only
+\((N,q)=(250,7),(280,7)\).
+Their \(101\) and \(113\) possible cardinalities are checked exactly
+by \eqref{eq:empty}; the fractions are in
+\texttt{small\_cutoffs.json}. They are strictly negative in the
+asserted range and zero outside it.
+\end{proof}
+
+For \(N=10^d\), these finite extended exceptions are unnecessary:
+at \(d=2\) there is no admissible \(7\le q<N/32\), while at
+\(d\ge3\) one has \(a\ge132\).
+
+\section{The matching window and exceptional families}\label{sec:matching}
+Suppose \(N/4\le q<N/2\), and put \(t=N-2q\).
+Every nonsingleton column is a pair with difference \(2q\),
+since three odd terms would span at least \(4q\ge N\).
+The pairs are exactly
+\begin{equation}\label{eq:pairs}
+ \{h,h+2q\},\qquad 1\le h<t,\qquad \gcd(h(t-h),10)=1.
+\end{equation}
+Let \(M\) be their number and let \(\gamma\) count their endpoints
+in row \(2\). No pair meets a row twice, because \(3\nmid q\).
+Reflection \(h\mapsto N-h\) exchanges rows \(0,1\) and fixes row \(2\),
+so the numbers of pairs of each type are
+\[
+ e_{01}=M-\gamma,\qquad e_{02}=e_{12}=\gamma/2.
+\]
+The pair centered at \(N/2\), with endpoints \(N/2-q,N/2+q\),
+has both endpoints coprime to \(10\); hence \(M\ge1\).
+
+Put
+\begin{equation}\label{eq:matchingparams}
+ b=2a+2,\quad T=m(m-1),\quad B=b(b-1),\quad S=s(s-1),
+\end{equation}
+and
+\begin{equation}\label{eq:matchingpoly}
+ L=T\gamma-2MB,\quad V=M(T-S)-T\gamma,\quad
+ P(k)=L(s-k)(s-k-1)+BV.
+\end{equation}
+
+\begin{lemma}\label{lem:matching}
+For \(2\le k\le s\),
+\begin{equation}\label{eq:matching}
+ C(d,q,k)=\frac{k(k-1)\binom sk}{\binom mk\,STB}\,P(k).
+\end{equation}
+Moreover
+\[
+ P(2)=-MB(3a^2+5a+4)<0,\qquad P(s-1)=P(s)=BV.
+\]
+\end{lemma}
+\begin{proof}
+Let \(E_r\) indicate an empty row and \(I_e\) the event that both
+endpoints of pair \(e\) are selected.
+Then \(\nu_3=3-\sum_r E_r\) and \(\nu_q=k-\sum_e I_e\).
+Counting pairs wholly outside each row yields
+\[
+ C=
+ \frac{\gamma\binom{b-2}{k-2}+(M-\gamma)\binom{s-2}{k-2}}{\binom mk}
+ -\frac{Mk(k-1)}{T\binom mk}
+       \left(2\binom bk+\binom sk\right).
+\]
+Use
+\[
+ \binom{n-2}{k-2}=\binom nk\frac{k(k-1)}{n(n-1)},\qquad
+ \binom bk=\binom sk\frac{(s-k)(s-k-1)}S
+\]
+to obtain \eqref{eq:matching}. Substitution at \(k=2,s-1,s\)
+gives the endpoint formulas.
+\end{proof}
+
+The restriction \(\gcd(q,30)=1\) makes \(t=r+60j\), \(j\ge0\),
+with base counts as in Table~\ref{tab:matching}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+\(r\)&\(M_r\)&\(\gamma_r\)&\(D_r=2M_r-3\gamma_r\)\\
+\midrule
+2&1&0&2\\
+6&1&0&2\\
+14&5&2&4\\
+18&5&4&-2\\
+26&7&4&2\\
+38&11&6&4\\
+42&13&8&2\\
+54&17&12&-2\\
+\bottomrule
+\end{tabular}
+\caption{The periodic pair count. For \(t=r+60j\),
+\(M=M_r+18j\) and \(\gamma=\gamma_r+12j\).}\label{tab:matching}
+\end{table}
+
+The base counts follow directly from \eqref{eq:pairs}.
+Over each interval of sixty possible starts there are eighteen
+admissible starts, six in each residue class modulo \(3\):
+admissibility allows three residues modulo \(10\).
+Since the two endpoints occupy distinct rows, these starts give
+twelve additional endpoints in row \(2\).
+This proves the period formula, without extrapolation from samples.
+
+Since \(X=(s-k)(s-k-1)\) decreases to zero, \(P\) is affine in \(X\).
+If \(V<0\), both endpoint values of \(P\) are negative, so all its
+values in the range are negative. To have \(V\ge0\), one must have
+\begin{equation}\label{eq:ratio}
+ \frac{\gamma}{M}\le\frac{T-S}{T}
+ =\frac{5a^2+7a}{9a^2+21a+12}<\frac59.
+\end{equation}
+Consequently \(D_r=2M-3\gamma>M/3\), or \(M<3D_r\).
+Table~\ref{tab:matching} leaves only \(t=2,6,14,38\).
+For \(t=2,6\), \(V>0\); for \(t=14\),
+\[
+ V=7a^2-7a-24>0\qquad(a\ge12);
+\]
+for \(t=38\),
+\[
+ V=a^2-49a-72,
+\]
+which is negative at \(a=12\) and positive at every \(a\ge132\).
+Thus \(V=0\) never occurs at a decimal depth.
+
+Substituting these four pair counts into \eqref{eq:matchingpoly}
+and dividing by positive factors gives exactly the three sign
+expressions in Theorem~\ref{thm:decimal}. For \(t=2,6\) the factor is
+\(B\); for \(t=14,38\) it is \(2(a+1)\).
+Their coefficients of \(X\) are negative.
+The sequence \(X\) is strictly decreasing up to \(k=s-1\),
+and equals zero at both \(s-1,s\), where the sign is positive.
+This proves the single transition and the bound of one integer zero.
+
+\section{Intermediate moduli by affine bands}\label{sec:bands}
+We now treat \(N/32\le q<N/4\).
+For \(d\ge3\), the proof reduces to fourteen finite certificate families.
+
+\subsection{Column multiplicities}
+Put
+\[
+ \ell=\left\lceil\frac{N}{2q}\right\rceil,\qquad
+ \frac{N}{2\ell}\le q<\frac{N}{2(\ell-1)},\qquad 3\le\ell\le16.
+\]
+For the odd representative \(h\in[1,2q)\) of a class, the odd
+progression has length \(\ell\) when
+\(h<t=N-2(\ell-1)q\), and length \(\ell-1\) otherwise.
+Fix \(u=q\bmod30\) among the eight units modulo \(30\), and put
+\[
+ t_0=(10-2(\ell-1)u)\bmod30,\qquad b_0=2u\bmod30.
+\]
+For each odd \(r\in\{1,3,\ldots,29\}\), the numbers of representatives
+in the two length ranges are
+\begin{align}
+ w_{\ell,r}
+   &=\frac{N-2(\ell-1)q-t_0}{30}+\one_{\{r<t_0\}},\label{eq:wlong}\\
+ w_{\ell-1,r}
+   &=\frac{-N+2\ell q+t_0-b_0}{30}
+             +\one_{\{r<b_0\}}-\one_{\{r<t_0\}}.\label{eq:wshort}
+\end{align}
+The column profile from a length \(L\) and a start \(r\) is
+\begin{equation}\label{eq:bandvector}
+ v_i^{(L,u,r)}
+ =|\{0\le j<L:r+2ju\equiv i\pmod3,\ 5\nmid r+2ju\}|.
+\end{equation}
+There are thirty length/start possibilities.
+Aggregating their weights gives
+\begin{equation}\label{eq:affine}
+ n_v=\frac{A_{\ell,u,v}N+B_{\ell,u,v}q+C_{\ell,u,v}}{30}.
+\end{equation}
+The checker reconstructs these integer triples from
+\eqref{eq:wlong}--\eqref{eq:bandvector}. No precomputed column
+multiplicity is trusted without comparison.
+
+\subsection{Sign certificates}
+For a fixed band take \(J=\max_v|v|\) and
+\(D=\max_{v,r}\delta_r(v)\), over all its residue cases.
+The numerator of \eqref{eq:kernelcov}, multiplied by \(30\), is
+\begin{equation}\label{eq:bandraw}
+ P_{\ell,u}(a,q,k)=
+ \sum_v(A_{\ell,u,v}N+B_{\ell,u,v}q+C_{\ell,u,v})K_v(a,k),
+ \qquad N=(15a+20)/2.
+\end{equation}
+It is affine in \(q\).
+At each formal endpoint \(q=N/(2\ell)\) and
+\(q=N/(2(\ell-1))\), the certificate establishes
+\begin{equation}\label{eq:bandcert}
+ P_{\ell,u}=k(k-1)R_{\ell,u},\qquad
+ R_{\ell,u}\bigm|_{k=2+(2a+2)x}
+ =\sum_{i=0}^{J} B_i(a)\binom Ji x^i(1-x)^{J-i}.
+\end{equation}
+For a positive integer scale \(L\), it records every coefficient of
+\(-L B_i(132+y)\), of degree at most \(J+D-1\).
+All \(35\,664\) stored integers are strictly positive.
+It follows that \(B_i(a)<0\) for every \(a\ge132\).
+By Lemma~\ref{lem:certificate}, \eqref{eq:bandcert} is strictly
+negative at each endpoint for \(2\le k\le s\).
+Affinity in \(q\) proves the same strict sign between them.
+
+These endpoints are evaluations of formal polynomials.
+They need not satisfy the residue condition \(q\equiv u\pmod{30}\),
+and their column weights need not describe an actual partition.
+Affinity requires only the two polynomial endpoint values.
+
+The raw total degree of an endpoint polynomial in \((a,k)\)
+is at most \(J+D+1\), and its \(k\)-degree is at most \(J+2\),
+by Section~\ref{sec:kernel} and the affine multiplicity factor.
+After the substitution for \(k\), the degree bounds in \((a,x)\)
+are therefore \(J+D+1,J+2\).
+The stored right side of \eqref{eq:bandcert}, including \(k(k-1)\),
+has these same separate bounds. Equality at
+\(J+D+2\) consecutive \(a\)-values starting at \(132\) and
+\(J+3\) nodes \(x=j/(J+2)\) proves the full identity.
+In particular, the factor \(k(k-1)\) and the Bernstein
+representation are verified, not merely inferred from vanishing
+at a few sample sizes.
+
+Table~\ref{tab:bands} lists all dimensions.
+Since \(J\le13\), \(D\le11\), and \(a\ge132\), the denominator
+in \eqref{eq:kernelcov} is positive.
+Thus the verified negative numerator proves negative covariance.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+\(\ell\)&\(J\)&\(D\)&Stored integers&Grid equalities\\
+\midrule
+3&3&4&448&864\\
+4&4&5&720&1232\\
+5&4&6&800&1344\\
+6&5&6&1056&1664\\
+7&6&7&1456&2160\\
+8&7&7&1792&2560\\
+9&8&8&2304&3168\\
+10&8&8&2304&3168\\
+11&9&9&2880&3840\\
+12&10&9&3344&4368\\
+13&11&10&4032&5152\\
+14&12&10&4576&5760\\
+15&12&10&4576&5760\\
+16&13&11&5376&6656\\
+\midrule
+Total&&&35664&47696\\
+\bottomrule
+\end{tabular}
+\caption{Complete band certificates. Grid counts include all eight
+unit residues and both formal endpoints.}\label{tab:bands}
+\end{table}
+
+
+\subsection{The finite depth and the final join}
+At \(d=2\), the moduli \(7\le q<N/4\) coprime to \(30\) are
+\(7,11,13,17,19,23\).
+For these six moduli, the \(246\) fractions from \eqref{eq:empty},
+covering all \(41\) cardinalities, are in \texttt{depth2.json}.
+The checker recomputes each fraction and compares it with the stored
+value. They are strictly negative for \(2\le k\le28\) and zero otherwise.
+
+\begin{proof}[Completion of Theorem~\ref{thm:decimal}]
+Section~\ref{sec:empty} proves every deterministic zero.
+Section~\ref{sec:matching} proves the classification on
+\(N/4\le q<N/2\).
+For \(d\ge3\), Section~\ref{sec:bands} proves negativity on
+\(N/32\le q<N/4\), while Proposition~\ref{prop:small} proves it for
+\(7\le q<N/32\).
+The first interval includes its lower endpoint and the second
+uses a strict upper endpoint, so the join has no gap.
+The exhaustive depth-two calculation completes the remaining cases.
+\end{proof}
+
+\section{The arithmetic meaning: two local sieve factors}\label{sec:sieve}
+For fixed \(H\subseteq\Omega_N\), consider the translated block forms
+\[
+ Nb+h,\qquad h\in H,\qquad b\in\mathbb Z.
+\]
+If \(p\) is prime and \(p\nmid10\), multiplication by \(N\) is
+invertible modulo \(p\).
+The set of block indices \(b\bmod p\) for which at least one form
+is divisible by \(p\) therefore has exactly \(\nu_p(H)\) elements.
+Consequently
+\begin{equation}\label{eq:localfactor}
+ L_p(H)=1-\frac{\nu_p(H)}p
+\end{equation}
+is the exact fraction of block indices avoiding this local obstruction.
+This assertion is a finite residue count, with no distributional
+assumption about primes.
+
+\begin{corollary}\label{cor:sieve}
+For the uniform \(k\)-subset model and a prime \(q\ge7\),
+\begin{equation}\label{eq:sievecov}
+ \Cov_H(L_3(H),L_q(H))=\frac{C(d,q,k)}{3q}.
+\end{equation}
+Equivalently,
+\[
+ \E_H[L_3L_q]=\E_H[L_3]\E_H[L_q]+\frac{C(d,q,k)}{3q}.
+\]
+Thus Theorem~\ref{thm:decimal} gives the sign of the exact correction
+to the product of these two mean local factors.
+\end{corollary}
+\begin{proof}
+Both local factors are affine functions of their occupancies.
+Their covariance is the product of the two slopes times
+\(\Cov(\nu_3,\nu_q)\).
+\end{proof}
+
+For fixed \(k\), division of each local factor by
+\((1-1/p)^k\) is a positive deterministic normalization, so it
+preserves the sign in \eqref{eq:sievecov}. Such normalized factors
+are the ones appearing in the usual singular-series framework
+\cite{kuperberg}. For the block forms here, the primes \(2,5\)
+divide no form and give constant local root counts zero.
+One must not replace this block model by unrestricted translates
+\(b+h\): their local factors at \(2,5\) are different.
+
+For example, at \(N=100\), every prime \(p>50\) acts injectively
+on the carrier, so \(\nu_p(H)=k\). Shape dependence of the block
+local factors is confined to the thirteen primes
+\[
+ 3,7,11,13,17,19,23,29,31,37,41,43,47.
+\]
+This finiteness does not turn the two-factor covariance theorem
+into a formula for their entire product.
+
+There is also a concrete obstruction to substituting actual primes
+for uniform subsets. A uniform subset can occupy all three residue
+classes modulo \(3\), giving \(L_3=0\).
+A set of offsets whose forms are all primes greater than \(3\)
+in one fixed block must avoid the forbidden class modulo \(3\),
+so it has \(\nu_3\le2\).
+The sampling law in this article is not the law of those prime sets.
+No prime prediction, prime-pattern asymptotic, or bound on prime gaps
+is deduced.
+
+\section{Consequences, examples and further questions}\label{sec:scope}
+
+\subsection{Strict transitions for two exceptional gaps}
+
+\begin{corollary}[No nontrivial zeros for gaps \(7\) and \(19\)]
+\label{cor:nonzero}
+For \(2\le k\le s\), the covariance in Theorem~\ref{thm:decimal}
+does not vanish when \(q=N/2-7\), \(d\ge2\), or when
+\(q=N/2-19\), \(d\ge3\).
+In each family its transition from negative to positive is strict
+at integer sample sizes. The deterministic zero ranges are unchanged.
+\end{corollary}
+\begin{proof}
+Write \(f_7(a)=(2a+1)(7a^2-7a-24)\) and \(D_7=11a-2\).
+Since \(X=(s-k)(s-k-1)\) is integral, a zero would require
+\(D_7\mid f_7(a)\). The polynomial identity
+\[
+ 11^3f_7(a)
+ =(11a-2)(1694a^2-539a-6753)-45450
+\]
+then forces \(D_7\mid45450\).
+For \(d\ge5\), one has \(D_7\ge146650>45450\).
+At \(d=2,3,4\), its values are \(130,1450,14650\), and the
+remainders of \(45450\) are respectively \(80,500,1500\).
+Thus no admitted depth satisfies the necessary divisibility.
+
+For gap \(19\), put \(f_{19}(a)=(2a+1)(a^2-49a-72)\) and
+\(D_{19}=17a-14\). Now
+\[
+ 17^3f_{19}(a)
+ =(17a-14)(578a^2-27557a-78471)-1452330,
+\]
+so a zero requires \(D_{19}\mid1452330\).
+For \(d\ge6\), \(D_{19}\ge2266630>1452330\).
+At \(d=3,4,5\), the divisors are \(2230,22630,226630\), with
+remainders \(600,4010,92550\). None divides the constant.
+The endpoint signs and single transition follow from
+Theorem~\ref{thm:decimal}.
+\end{proof}
+
+For gaps \(1\) and \(3\), put \(j=s-k\).
+The common zero equation \(2j(j-1)=a(5a+7)\) has an admissible
+integer solution exactly when
+\begin{equation}\label{eq:remainingzeros}
+ D_d=1+10a^2+14a
+\end{equation}
+is a square. If so, its square root is odd and
+\(j=(1+\sqrt{D_d})/2\); the endpoint signs in
+Theorem~\ref{thm:decimal} place this root in the required interval.
+For \(n=d-1\ge1\), the same condition is equivalent to the existence of
+an integer \(y\) satisfying
+\[
+ y^2=160\,10^{2n}-152\,10^n+1.
+\]
+Indeed, the right-hand side equals \(9D_d\), so every such \(y\)
+is divisible by \(3\). We leave this exponential Diophantine
+question open.
+
+\subsection{Overlapping admissible test sets}
+
+\begin{corollary}[Nonnegative weighted occupancy]\label{cor:weighted}
+Let \(E=R_0\sqcup R_1\sqcup R_2\), where
+\((|R_0|,|R_1|,|R_2|)=(a+2,a+2,a)=\rho\), for an integer \(a\ge40\).
+For a uniform \(k\)-subset \(H\subseteq E\), let \(U(H)\) count
+the rows meeting \(H\).
+Let \(B_1,\ldots,B_t\subseteq E\) be a finite nonempty family
+whose oriented intersection vectors
+\[
+ v_i=(|B_i\cap R_0|,|B_i\cap R_1|,|B_i\cap R_2|)
+     =b_i\one+e_i,\qquad b_i=\min_r(v_i)_r,
+\]
+each satisfy \eqref{eq:criterion}.
+For fixed real weights \(w_i\ge0\) with \(\sum_iw_i>0\), one has
+\[
+ \Cov\left(U(H),\sum_{i=1}^t
+ w_i\one_{\{H\cap B_i\ne\varnothing\}}\right)<0
+ \qquad(2\le k\le2a+4).
+\]
+The covariance is zero at every other allowed cardinality
+\(0\le k\le3a+4\). The sets \(B_i\) may overlap and need not cover \(E\).
+\end{corollary}
+\begin{proof}
+Fix an admissible \(B\) with intersection vector \(v\), and let
+\(m=3a+4\), \(j=|B|=|v|\).
+For \(2\le k\le s=2a+4\), the avoidance identity
+\eqref{eq:conditional} gives
+\[
+ \Cov(U(H),\one_{\{H\cap B\ne\varnothing\}})
+ =\frac{\binom{m-j}{k}}{\binom mk}
+   \bigl(F(\rho-v;k)-F(\rho;k)\bigr).
+\]
+Its derivation uses only one set \(B\), not a column partition.
+The argument in the proof of Theorem~\ref{thm:criterion},
+before summing over columns, establishes
+\(F(\rho-v;k)<F(\rho;k)\) for each vector satisfying
+\eqref{eq:criterion}. In particular, the orientation of \((0,0,2)\)
+and its extra bound on \(b\) are retained.
+The prefactor is positive since \(m-j\ge2a+4\ge k\).
+Every positively weighted term therefore has negative covariance;
+linearity gives the assertion. For \(k=0,1\), or \(k>2a+4\),
+the row count \(U\) is deterministic.
+\end{proof}
+
+Taking the \(B_i\) to be a column partition and all weights equal to
+one recovers Theorem~\ref{thm:criterion}. Alternatively, weights may
+be assigned only to admissible columns of a larger partition.
+No signed-weight, stochastic negative-association, or nonuniform
+sampling statement is asserted.
+
+\subsection{Examples and remaining questions}
+The sign changes are already visible in the smallest decimal carrier:
+\[
+ C(2,47,8)=\frac{1771}{20974005}>0.
+\]
+At a common cardinality \(k=15\), one has
+\[
+ C(2,41,15)=-\frac{51037}{134914728}<0,\qquad
+ C(2,43,15)=\frac{161}{10939032}>0.
+\]
+The row sizes are the same, and both column partitions have five
+pairs and thirty singletons, hence the same marginal law for
+\(\nu_q\). Their intersections with the three rows differ.
+Thus marginal occupancy laws alone cannot determine the covariance.
+
+The matroid interpretation also has a limit.
+For \(N=100,q=7\), the two rank functions are not a matroid
+perspective in either direction. Adding \(17\) to \(\{3\}\)
+increases the modulo-\(3\) rank by one and the modulo-\(7\) rank
+by zero. Adding \(7\) to \(\{1\}\) does the reverse.
+These two examples violate the respective rank-increment inequalities
+for a perspective \cite[p.~304]{lasvergnas}.
+The sign theorem is therefore not presented as an application of
+a perspective-specific positivity statement.
+
+Several questions remain distinct from the proved results.
+The thresholds \(h\ge16\) and \(a\ge40\) in the urn inequalities
+may admit improvement, but sharpness is not needed here.
+An elementary proof eliminating their coefficient certificates
+would shorten the computational dependency.
+After Corollary~\ref{cor:nonzero}, the integer-zero question is
+restricted to gaps \(1\) and \(3\), equivalently the square condition
+\eqref{eq:remainingzeros}.
+Other bases and other pairs of moduli require separate analysis.
+Finally, a useful transfer to prime patterns would need a
+controlled full-product average or a justified nonuniform law on
+offset sets. Pairwise covariance supplies only one part of that problem.
+
+\section{Certificate specification and reproduction}\label{sec:certificates}
+The companion folder is self-contained and uses Python 3.10 or later.
+It contains eighteen JSON certificate files:
+fourteen bands, two urn files, and two finite-boundary files.
+A manifest pins all twenty-six payload files by byte count and SHA-256;
+the manifest itself is the twenty-seventh file.
+The original certificate bytes are retained, with their source-member
+identities in \texttt{PROVENANCE.json}.
+The checker requires no original ZIP, symbolic generator, historical
+prime dataset, or internal project document.
+
+\subsection{Encodings and independent reconstruction}
+For a band, the certificate declares \(\ell,J,D\), a positive scale,
+the shift \(132\), affine type tables, endpoint denominators and every
+Bernstein index.
+The checker derives \(J,D\), the type alphabet and the affine
+multiplicities independently from \eqref{eq:bandvector}.
+It requires exactly all eight residues and both endpoints.
+The integer array for index \(i\) lists the coefficients of
+\(-L B_i(132+y)\) in ascending powers of \(y\).
+
+For the urn and anchor files, the arrays are the coefficients of
+\(\sigma L B_i(t_0+y)\), again in ascending powers.
+Here \((\sigma,t_0)=(1,16)\) for the urn increment and
+\((-1,40)\) for the anchors.
+Thus the reconstructed Bernstein coefficient is
+\(\sigma/L\) times the stored power polynomial.
+Array dimensions, positive scale, domain shift, sign, and positive
+constant terms are checked explicitly.
+The raw polynomials come from the displayed formulas in the proofs,
+not from the symbolic generator that produced the arrays.
+
+The complete identity workload is
+\[
+ 47\,696+890+3166=51\,752
+\]
+exact rational equalities, using \(38\,784\) stored integer coefficients.
+In addition, the finite boundaries require \(246+214=460\) exact
+fractions. Direct probability comparisons and adverse examples
+provide separate checks of the algebra-to-probability conversion.
+They supplement, rather than replace, the global polynomial identities.
+
+\newpage
+\subsection{How to run and interpret the checks}
+From the companion directory, run
+\begin{verbatim}
+python -B verify.py
+python -B -O verify.py
+python -B -m unittest -v test_companion
+python -B -O -m unittest -v test_companion
+\end{verbatim}
+The verifier writes nothing and prints a deterministic JSON receipt.
+If output is redirected, the destination should be outside the companion
+directory, whose inventory is checked exactly.
+The normal and optimized receipts must agree byte for byte.
+The suite contains 17 unit tests: 16 negative controls and one positive
+inventory check.
+The test suite checks rejection of omitted cases, corrupted coefficients,
+altered geometry, weakened degree declarations, wrong domains and
+missing files; it does not rely on Python assertions being enabled.
+A clean copy of the folder suffices to repeat every check.
+
+The certificate map identifies each proof dependency and grid size.
+Hashes establish consistency with that particular package, not a
+trusted digital signature. A successful checker run does not prove
+that an arbitrary revised manuscript correctly invokes the identities:
+the written domain, positivity and reduction arguments remain part
+of the mathematical proof.
+
+\section*{Preparation note}
+AI assistance contributed to mathematical exploration, proof development,
+code preparation, verification and drafting. The author supplied research
+packages produced with an external AI agent; its exact model and version
+are not documented in the available record. Integration, manuscript
+preparation and computational checks used the Codex assistant.
+A separate AI reading examined an earlier version. This is not human
+peer review, and complete human verification is not claimed here.
+The companion records certificate provenance and checker adaptations.
+Exact computational replay supports the stated identities; it does not
+establish novelty or replace review of the written arguments.
+
+\begin{thebibliography}{9}
+\bibitem{benhamou}
+A.~Ben-Hamou, Y.~Peres and J.~Salez,
+\emph{Weighted sampling without replacement},
+arXiv:1603.06556 (2016).
+\url{https://arxiv.org/abs/1603.06556}.
+
+\bibitem{joagdev}
+K.~Joag-Dev and F.~Proschan,
+Negative association of random variables, with applications,
+\emph{Annals of Statistics} \textbf{11} (1983), no.~1, 286--295.
+\href{https://doi.org/10.1214/aos/1176346079}{doi:10.1214/aos/1176346079}.
+
+\bibitem{klm}
+A.~Klenke and L.~Mattner,
+Stochastic ordering of classical discrete distributions,
+\emph{Advances in Applied Probability} \textbf{42} (2010), no.~2, 392--410.
+\href{https://doi.org/10.1239/aap/1275055235}{doi:10.1239/aap/1275055235}.
+Preprint:
+\url{https://arxiv.org/abs/0903.1361v2}.
+
+\bibitem{kuperberg}
+V.~Kuperberg,
+Sums of singular series along arithmetic progressions and with
+smooth weights,
+\emph{International Journal of Number Theory} \textbf{21} (2025), no.~1, 53--74.
+\href{https://doi.org/10.1142/S1793042125500046}{doi:10.1142/S1793042125500046}.
+Preprint:
+\url{https://arxiv.org/abs/2301.06095}.
+
+\bibitem{lasvergnas}
+M.~Las Vergnas,
+The Tutte polynomial of a morphism of matroids.
+4. Computational complexity,
+\emph{Portugaliae Mathematica} \textbf{64} (2007), no.~3, 303--309.
+\url{https://ems.press/content/serial-article-files/44572?nt=1}.
+\end{thebibliography}
+\end{document}

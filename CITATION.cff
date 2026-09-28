@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript when using these results and identify the companion version for computational work."
+type: software
+title: "Covariance Signs for Residue-Class Occupancy on Decimal Unit Carriers: exact companion"
+authors:
+  - family-names: Babanskyy
+    given-names: Oleksiy
+    orcid: "https://orcid.org/0009-0001-6176-6208"
+version: 1.0.0-rc4
+preferred-citation:
+  type: unpublished
+  title: "Covariance Signs for Residue-Class Occupancy on Decimal Unit Carriers"
+  authors:
+    - family-names: Babanskyy
+      given-names: Oleksiy
+      orcid: "https://orcid.org/0009-0001-6176-6208"
+  year: 2026
+  notes: "Manuscript accompanied by version 1.0.0-rc4 of the exact companion."
